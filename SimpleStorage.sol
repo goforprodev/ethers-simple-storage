@@ -51,6 +51,7 @@ contract SimpleStorage{
     function retrieve() public view returns(uint256){
         return favouriteNumber;
     }
+    
     // storage units in solidity are >>7
     //calldata,memory,storage
     function addPerson(string memory _name, uint256 _favouriteNumber) public{
