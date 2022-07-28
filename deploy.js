@@ -1,16 +1,14 @@
 const ethers = require("ethers");
 const fs = require("fs-extra");
+require("dotenv").config();	
 
-const RPC_SERVER = "http://127.0.0.1:7545";
-const PRIVATE_KEY =
-  "711c38d35ac0bbdaea620c221af63dd45c462040404e625de89099835a92d1df";
 
 async function main() {
   //connect to blockchain
-  const provider = new ethers.providers.JsonRpcProvider("http://0.0.0.0:7545");
+  const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_PROVIDER);
   // connect wallet
   const wallet = new ethers.Wallet(
-    "186cd67dcb869fe760b3372cae50d02160f7464e5358e9caa9a3c6ab0264d724",
+    process.env.PRIVATE_KEY,
     provider
   );
 
